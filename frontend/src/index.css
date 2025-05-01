@@ -3,3 +3,35 @@
 body {
   font-family: 'Outfit', sans-serif;
 }
+
+
+.range-slider {
+  height: 1px !important;
+}
+
+
+.range-slider__track {
+  height: 1px !important;
+  background: #e2e8f0 !important;
+}
+
+
+.range-slider__range {
+  height: 1px !important;
+  background: black !important;
+}
+
+
+.range-slider__thumb {
+  background: black !important;
+  border: 1px solid black !important;
+  width: 12px !important;
+  height: 12px !important;
+  transform: translateY(-50%);
+}
+
+
+.range-slider__container {
+  padding: 0 !important;
+  margin: 0 !important;
+}
