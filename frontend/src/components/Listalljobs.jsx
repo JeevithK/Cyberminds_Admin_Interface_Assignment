@@ -50,7 +50,7 @@ useEffect(() => {
   const fetchJobs = async () => {
     setIsLoading(true);
     try {
-      const res = await axios.get("https://cyberminds-admin-interface-assignment-bamg.onrender.com/admin/getalljobs");
+      const res = await axios.get("https://cyberminds-admin-interface-assignment.onrender.com/admin/getalljobs");
       setAllJobs(res.data);
     } catch (error) {
       console.error("Error fetching jobs:", error);
