@@ -55,7 +55,7 @@ const Createjobpage = ({ setShowCreateJob }) => {
 
     try {
       const postjob = await axios.post(
-        "http://localhost:5000/admin/createjob",
+        "https://cyberminds-admin-interface-assignment.onrender.com/admin/createjob",
         payload
       );
       console.log(payload);
