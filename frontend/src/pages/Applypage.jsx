@@ -22,7 +22,7 @@ const Applypage = () => {
   const fetchJobDetails = async () => {
     try {
       console.log("Fetching job with ID:", id);
-      const response = await axios.get(`http://localhost:5000/apply/${id}`);
+      const response = await axios.get(`https://cyberminds-admin-interface-assignment.onrender.com/apply/${id}`);
       console.log("Response data:", response.data);
       setJob(response.data);
     } catch (error) {
