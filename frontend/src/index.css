@@ -35,3 +35,75 @@ body {
   padding: 0 !important;
   margin: 0 !important;
 }
+
+
+.range-slider {
+  height: 1px !important;
+}
+
+
+.range-slider__track {
+  height: 1px !important;
+  background: #e2e8f0 !important;
+}
+
+
+.range-slider__range {
+  height: 1px !important;
+  background: black !important;
+}
+
+
+.range-slider__thumb {
+  background: black !important;
+  border: 1px solid black !important;
+  width: 12px !important;
+  height: 12px !important;
+  transform: translateY(-50%);
+}
+
+
+.range-slider__container {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+
+/* Cooling glass effect styles */
+.cooling-glass-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(235, 235, 235, 0.7);
+  /* backdrop-filter: blur(1px); */
+  z-index: 50;
+}
+
+.cooling-glass-modal {
+  position: relative;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 42rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  overflow-y: auto;
+  max-height: 90vh;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 50;
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}

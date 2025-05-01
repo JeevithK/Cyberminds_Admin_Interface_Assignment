@@ -57,27 +57,27 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-2 text-[17px]">
-            <a href="#" className="text-gray-700">
+            <a href="/" className="text-gray-700">
               <div className="px-4 py-2 border-amber-50 border rounded-xl hover:shadow-md transition-shadow duration-200 font-bold">
                 Home
               </div>
             </a>
-            <a href="#" className="text-gray-700">
+            <a href="/findjobs" className="text-gray-700">
               <div className="px-4 py-2 border-amber-50 border rounded-xl hover:shadow-md transition-shadow duration-200 font-bold">
                 Find Jobs
               </div>
             </a>
-            <a href="#" className="text-gray-700">
+            <a href="/find-talent" className="text-gray-700">
               <div className="px-4 py-2 border-amber-50 border rounded-xl hover:shadow-md transition-shadow duration-200 font-bold">
                 Find Talents
               </div>
             </a>
-            <a href="#" className="text-gray-700">
+            <a href="/about" className="text-gray-700">
               <div className="px-4 py-2 border-amber-50 border rounded-xl hover:shadow-md transition-shadow duration-200 font-bold">
                 About us
               </div>
             </a>
-            <a href="#" className="text-gray-700">
+            <a href="/testimonials" className="text-gray-700">
               <div className="px-4 py-2 border-amber-50 border rounded-xl hover:shadow-md transition-shadow duration-200 font-bold">
                 Testimonials
               </div>
@@ -113,22 +113,22 @@ const Header = () => {
                   Home
                 </div>
               </a>
-              <a href="#" className="text-gray-700">
+              <a href="/findjobs" className="text-gray-700">
                 <div className="px-4 py-2 border-amber-50 border rounded-xl hover:shadow-md transition-shadow duration-200 font-bold">
                   Find Jobs
                 </div>
               </a>
-              <a href="#" className="text-gray-700">
+              <a href="/find-talent" className="text-gray-700">
                 <div className="px-4 py-2 border-amber-50 border rounded-xl hover:shadow-md transition-shadow duration-200 font-bold">
                   Find Talents
                 </div>
               </a>
-              <a href="#" className="text-gray-700">
+              <a href="/about" className="text-gray-700">
                 <div className="px-4 py-2 border-amber-50 border rounded-xl hover:shadow-md transition-shadow duration-200 font-bold">
                   About us
                 </div>
               </a>
-              <a href="#" className="text-gray-700">
+              <a href="/estimonials" className="text-gray-700">
                 <div className="px-4 py-2 border-amber-50 border rounded-xl hover:shadow-md transition-shadow duration-200 font-bold">
                   Testimonials
                 </div>
@@ -155,8 +155,9 @@ const Header = () => {
 
         {/* Modal Overlay with backdrop blur */}
         {showCreateJob && (
-          <div className="fixed inset-0 flex justify-center items-center bg-white bg-opacity-80 backdrop-blur-sm z-50 transition-opacity duration-300 ease-in-out">
-            <div className="bg-white rounded-xl shadow-2xl w-full max-w-2xl mx-4 overflow-y-auto max-h-[90vh]">
+          <div className="modal-container">
+            <div className="cooling-glass-overlay"></div>
+            <div className="cooling-glass-modal">
               <Createjobpage setShowCreateJob={setShowCreateJob} />
             </div>
           </div>

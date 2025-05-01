@@ -41,20 +41,6 @@ const SalaryRange = ({ min, max, step, values, setValues }) => (
         rangeClassName="bg-black"
       />
     </div>
-
-    <style jsx>{`
-      :global(.range-slider__thumb) {
-        background: black;
-        border: 1px solid black;
-      }
-      :global(.range-slider__range) {
-        background: black;
-      }
-      :global(.range-slider__track) {
-        height: 1px;
-        background: black;
-      }
-    `}</style>
   </div>
 );
 

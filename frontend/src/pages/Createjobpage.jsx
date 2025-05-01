@@ -4,9 +4,10 @@ import { LuArrowDownUp } from "react-icons/lu";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
+import { FaAnglesDown } from "react-icons/fa6";
+import { FaAnglesRight } from "react-icons/fa6";
 
-
-const Createjobpage = ({ setShowCreateJob }) => {
+const Createjobpage = ({ setShowCreateJob}) => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     jobTitle: "",
@@ -60,24 +61,23 @@ const Createjobpage = ({ setShowCreateJob }) => {
       );
       console.log(payload);
       setShowCreateJob(false);
+      // onJobAdded();
       toast.success("Job Added !!");
       setTimeout(() => {
         navigate("/");
-      }, 3000); 
+      }, 3000);
     } catch (err) {
       console.log(err);
       toast.error("Error Adding Job!!");
       setShowCreateJob(false);
       setTimeout(() => {
         navigate("/");
-      }, 3000); 
+      }, 3000);
     }
-
   };
 
   return (
     <div className="p-6 relative">
-      
       <button
         onClick={() => {
           navigate("/");
@@ -143,7 +143,6 @@ const Createjobpage = ({ setShowCreateJob }) => {
               options={locationOptions}
               value={formData.location}
               onChange={(selectedOption) => {
-                
                 setFormData((prev) => ({
                   ...prev,
                   location: selectedOption,
@@ -154,7 +153,6 @@ const Createjobpage = ({ setShowCreateJob }) => {
               className="react-select-container text-[15px]"
               classNamePrefix="react-select"
               required
-              
             />
           </div>
 
@@ -266,17 +264,30 @@ const Createjobpage = ({ setShowCreateJob }) => {
             type="button"
             className="w-1/2 border border-gray-300 text-gray-700 py-3 rounded-md hover:bg-gray-50 transition flex items-center justify-center space-x-2"
           >
-            <span>Save Draft</span>
+            <span>
+              {" "}
+              <div className="flex flex-row items-center gap-2 hover:text-blue-600 cursor-pointer">
+                <div>Save Draft</div>
+                <div>
+                  <FaAnglesDown />
+                </div>
+              </div>
+            </span>
           </button>
           <button
             type="submit"
             className="w-1/2 bg-blue-500 text-white py-3 rounded-md hover:bg-blue-600 transition flex items-center justify-center space-x-2"
           >
-            <span>Publish</span>
+            <div className="flex flex-row items-center gap-2  cursor-pointer">
+              <div>Save Draft</div>
+              <div>
+                <FaAnglesRight />
+              </div>
+            </div>
           </button>
         </div>
       </form>
-      <Toaster/>
+      <Toaster />
     </div>
   );
 };

@@ -19,13 +19,13 @@ import { GoStack } from "react-icons/go";
 import useStore from "../stores/filterstore";
 import { shallow } from "zustand/shallow";
 
-const Listalljobs = () => {
+const Listalljobs = ({isadded,refreshTrigger}) => {
   const [alljobs, setAllJobs] = useState([]);
   const navigate = useNavigate();
 
   const globallocation = useStore((state) => state.globallocation);
   const globaltype = useStore((state) => state.globaltype);
-   const [isLoading, setIsLoading] = useState(true); 
+  const [isLoading, setIsLoading] = useState(true); 
 
   
   // useEffect(() => {
@@ -41,17 +41,16 @@ const Listalljobs = () => {
     microsoft: Microsoft,
     zepto: Zepto,
     meta: Meta,
-    cybermind:Cybermind,
+    cybermind: Cybermind,
   };
 
 
-  // console.log("Global Variables : ", globallocation, globaltype);
 
 useEffect(() => {
   const fetchJobs = async () => {
-    setIsLoading(true); // Show spinner
+    setIsLoading(true);
     try {
-      const res = await axios.get("https://cyberminds-admin-interface-assignment.onrender.com/admin/getalljobs");
+      const res = await axios.get("http://localhost:5000/admin/getalljobs");
       setAllJobs(res.data);
     } catch (error) {
       console.error("Error fetching jobs:", error);
@@ -62,51 +61,7 @@ useEffect(() => {
   };
 
   fetchJobs();
-}, []);
-
-  // useEffect(() => {
-  //     if (globallocation !== "")
-  //     {
-  //       const fetchJobs = async () => {
-  //         try {
-  //           const res = await axios.get(
-  //             `http://localhost:5000/selected/${globallocation}`
-  //           ); // Use correct port if needed
-  //           setAllJobs(res.data);
-  //         } catch (error) {
-  //           console.error("Error fetching jobs:", error);
-  //         }
-  //       };
-  //       fetchJobs();
-  //     }
-      
-  //     }, [globallocation]);
-
-// useEffect(() => {
-//   const fetchFilteredJobs = async () => {
-//     try {
-//       // Only make request if at least one filter is set
-//       if (globallocation || globaltype) {
-//         const res = await axios.get("http://localhost:5000/select", {
-//           params: {
-//             location: globallocation || undefined,
-//             type: globaltype || undefined,
-//           },
-//         });
-//         setAllJobs(res.data);
-//       }
-//     } catch (error) {
-//       console.error("Error fetching filtered jobs:", error);
-//     }
-//   };
-
-//   // Add debounce to prevent rapid successive requests
-//   const debounceTimer = setTimeout(fetchFilteredJobs, 300);
-
-//   return () => clearTimeout(debounceTimer);
-// }, [globallocation, globaltype]);
-
-
+}, [refreshTrigger]);
 
   return (
     <>
