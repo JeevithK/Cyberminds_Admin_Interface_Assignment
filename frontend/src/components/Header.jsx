@@ -108,7 +108,7 @@ const Header = () => {
         {showMobileMenu && (
           <div className="md:hidden bg-white shadow-lg rounded-b-xl">
             <div className="flex flex-col space-y-2 px-4 py-2">
-              <a href="#" className="text-gray-700">
+              <a href="/" className="text-gray-700">
                 <div className="px-4 py-2 border-amber-50 border rounded-xl hover:shadow-md transition-shadow duration-200 font-bold">
                   Home
                 </div>
@@ -128,7 +128,7 @@ const Header = () => {
                   About us
                 </div>
               </a>
-              <a href="/estimonials" className="text-gray-700">
+              <a href="/testimonials" className="text-gray-700">
                 <div className="px-4 py-2 border-amber-50 border rounded-xl hover:shadow-md transition-shadow duration-200 font-bold">
                   Testimonials
                 </div>
